@@ -1,0 +1,21 @@
+<p>
+    <mat-toolbar>
+        <span>Connect</span>
+        <button mat-button [matMenuTriggerFor]="menu">
+            <app-user-info [user]="user" [disableName]="true"></app-user-info>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="handleSettings()">
+                <mat-icon class="icon-color">settings</mat-icon><span>Settings</span>
+            </button>
+            <button mat-menu-item (click)="handleLogout()">
+                <mat-icon class="icon-color">exit_to_app</mat-icon><span>Logout</span>
+            </button>
+        </mat-menu>
+    </mat-toolbar>
+</p>
+<!-- <app-user-settings></app-user-settings> -->
+<app-posts (editPost)="onEditPost($event)"></app-posts>
+<button mat-fab color="success" aria-label="Example icon button with a delete icon" (click)="openDialog()">
+    <mat-icon>add_circle</mat-icon>
+</button>

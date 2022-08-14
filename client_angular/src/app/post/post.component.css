@@ -1,0 +1,93 @@
+mat-card {
+    margin: 10px;
+    padding: 10px;
+    width: 1200px;
+}
+
+.mat-card-header {
+    margin-left: -20px;
+    display: flex;
+    align-items: center;
+}
+
+.example-card {
+    max-width: 400px;
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+
+img {
+    border: 2px solid #ddd;
+    padding: 5px;
+    max-width: 65%;
+    border-radius: 4px;
+    margin-left: 20px;
+}
+
+.circle {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle img {
+    border-radius: 50%;
+}
+
+.circle .initials {
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 19px;
+    letter-spacing: 0.2625px;
+}
+
+.mat-card-content {
+    display: flex;
+    align-items: "center";
+    margin: 20px;
+}
+
+.mat-card-actions {
+    margin: auto;
+}
+
+.comment {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+
+.comment #comment-avatar {
+    height: 24px;
+    width: 24px;
+}
+
+.icon-color {
+    color: rgb(34 117 173)
+}
+
+.icon-color .mat-badge-content {
+    background: rgb(34 117 173);
+    color: white;
+}
+
+.new-comment {
+    border: none;
+    border-bottom: 1px solid;
+    width: 100%;
+    margin-left: 10px;
+}
+
+.mat-success {
+    background-color: #fff;
+    color: rgb(34 117 173);
+}
+
+.time-diff {
+    margin-left: 10px;
+    color: #ababab
+}

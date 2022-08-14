@@ -1,0 +1,14 @@
+.mat-submit {
+    background-color: rgb(34 117 173);
+    color: #fff;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #005691;
+  }

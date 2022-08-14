@@ -1,0 +1,26 @@
+<!-- form for adding/editing posts -->
+<h3 mat-dialog-title>New Post</h3>
+<mat-dialog-content class="mat-typography">
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Message</mat-label>
+            <input color="clear" matInput placeholder="Message" [(ngModel)]="message">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Tags</mat-label>
+            <input color="clear" matInput placeholder="Tags (Comma Seperated)" [(ngModel)]="tags">
+        </mat-form-field>
+    </div>
+    <div *ngIf="base64Input">
+        <img [src]="base64Input" height="200px" />
+    </div>
+    <div>
+        <input type="file" (change)="onFileSelected($event)" />
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="start">
+    <button mat-button color="submit" [mat-dialog-close]="true" (click)="handleSubmit()">Submit</button>
+    <button mat-button color="clear" (click)="clearForm()">Clear</button>
+</mat-dialog-actions>

@@ -1,0 +1,45 @@
+<!-- display a post -->
+<mat-card>
+    <mat-card-header>
+        <!-- make user info into a new component where you just pass the user object -->
+        <app-user-info [user]="post.userInfo[0]"></app-user-info>
+        <div class="time-diff">{{timeDiff}}</div>
+    </mat-card-header>
+    <mat-card-content>
+        <div>{{post.text}}</div>
+        <div *ngIf="post?.tags.length > 0" style="display:flex;padding-left:5px">
+            <p *ngFor="let tag of post?.tags"
+                style="padding-right: 5px;font-family: 'Monospace'; color: 'rgb(34 117 173)'">#{{tag}}</p>
+        </div>
+    </mat-card-content>
+    <img mat-card-image *ngIf="post.image" [src]="post.image" alt="Photo of a Shiba Inu">
+    <mat-card-actions>
+        <button mat-button (click)="likePost()">
+            <mat-icon class="icon-color" matBadge="{{post.likes}}">favorite_border</mat-icon>
+        </button>
+        <button mat-button (click)="toggleComments()">
+            <mat-icon class="icon-color" matBadge="{{comments ? comments.length : 0}}">chat_bubble_outline</mat-icon>
+        </button>
+        <button *ngIf="post.user == user._id" mat-button (click)="editPost()">
+            <mat-icon class="icon-color">edit</mat-icon>
+        </button>
+        <button *ngIf="post.user == user._id" mat-button (click)="deletePost()">
+            <mat-icon class="icon-color">delete</mat-icon>
+        </button>
+    </mat-card-actions>
+    <mat-divider></mat-divider>
+    <div style="margin: 10px;">Comments...</div>
+    <div [hidden]="!showComments">
+        <div *ngFor="let comment of comments">
+            <div class="comment">
+                <app-user-info [user]="comment.userInfo[0]" [small]="true"></app-user-info>
+                <div style="font-size: small;margin-left: 10px;">{{comment.comment}}</div>
+            </div>
+        </div>
+        <div style="display:flex;padding: 11px 0px 0px 10px;">
+            <app-user-info [user]="user" [small]="true"></app-user-info>
+            <input type="text" class="new-comment" name="new-comment" [(ngModel)]="newComment" placeholder="New Comment">
+            <button mat-button color="success" (click)="addComment()">Add</button>
+        </div>
+    </div>
+</mat-card>

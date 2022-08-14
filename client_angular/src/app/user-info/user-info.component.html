@@ -1,0 +1,11 @@
+<!-- display user information with an avatar -->
+<div class="user-info">
+    <div mat-card-avatar class="circle" [ngStyle]="{'background-color':  circleColor }">
+        <img *ngIf="!showInitials" [src]="user.displayPicture">
+    
+        <div *ngIf="showInitials" class="initials">
+            {{ initials }}
+        </div>
+    </div>
+    <mat-card-title *ngIf="!disableName" [ngClass]="{'small': small == true}">{{user.userName}}</mat-card-title>
+</div>
