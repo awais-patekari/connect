@@ -17,6 +17,7 @@ RUNNING THE APP
 
 Commands to run the app:
 1. server -
+  In server/index.js, use you own CONNECTION_URL to connect to mongoDb. 
   Inside server directory, run "npm start".
 2. React -
   Inside client_react directory, run "npm start". The local server will run at "http://localhost:3000/".
